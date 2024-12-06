@@ -1,4 +1,4 @@
-module CTApp
+module PWLdynamics
 
 greet() = print("Hello World!")
 
