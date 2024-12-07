@@ -16,6 +16,7 @@ makedocs(;
         ],
     ),
     pages=["Introduction" => "index.md",
+           "Bistable toggle switch" => "bistable.md",
            "Damped genetic oscillator" => "oscillator.md"],
 )
 

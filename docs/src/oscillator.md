@@ -141,11 +141,11 @@ The same procedure for iteratively increasing $k$ is used.
 
 ```@example main
 regMethod = 2       # Exponential regularization
-ki = 10             # Value of k for the first iteration
+ki = 20             # Value of k for the first iteration
 N = 400
 maxki = 400          # Value of k for the last iteration
 while ki < maxki
-    global ki += 10  # Iteration step
+    global ki += 20  # Iteration step
     local print_level = (ki == maxki) # Only print the output on the last iteration
     global k = ki
     global sol = solve(ocp; grid_size=N, init=sol, print_level=4*print_level)
