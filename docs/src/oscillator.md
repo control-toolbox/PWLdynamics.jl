@@ -67,7 +67,7 @@ x₁ᶜ   = 4.7                 # Cycle point (initial and final)
 
 # Initial guest for the NLP
 tf    = 1
-u(t)  = 2
+u(t)  = 1
 sol = (control=u, variable=tf)
 
 # Optimal control problem definition
@@ -86,8 +86,8 @@ ocp = @def begin
     uₘᵢₙ ≤ u(t) ≤ uₘₐₓ
     tf ≥ 1 # Force the state out of the confort zone
 
-    ẋ(t) == [ - γ₁*x₁(t) + k₁*u(t)*s⁺(x₂(t),θ₂,regMethod)  ,
-              - γ₂*x₂(t) + k₂*(1 - s⁺(x₁(t),θ₁,regMethod)) ]
+    ẋ(t) == [ - γ₁*x₁(t) + k₁*u(t)*(1 - s⁺(x₂(t),θ₂,regMethod))  ,
+              - γ₂*x₂(t) + k₂*s⁺(x₁(t),θ₁,regMethod) ]
 
     ∫(λ*abs_m1(u(t),regMethod) + 1-λ) → min      
 
@@ -128,24 +128,24 @@ u(t)  = sol.control(t)
 xticks = ([0, θ₁, x₁ᶜ], ["0", "θ₁", "x₁ᶜ"])
 yticks = ([0, θ₂], ["0", "θ₂"])
 
-plot!(plt1, x₁.(tspan), x₂.(tspan), label="optimal trajectory", xlabel="x₁", ylabel="x₂", xlimits=(θ₁/1.25, 1.1*x₁ᶜ), ylimits=(θ₂/2, 1.5*θ₂))
+plot!(plt1, x₁.(tspan), x₂.(tspan), label="optimal trajectory", xlabel="x₁", ylabel="x₂", xlimits=(θ₁/1.5, 1.1*x₁ᶜ), ylimits=(θ₂/2, 1.75*θ₂))
 xticks!(xticks)
 yticks!(yticks)
 plot!(plt2, tspan, u, label="optimal control", xlabel="t")
 plot(plt1, plt2; layout=(1,2), size=(800,300))
 ```
 
-## Resolution through exponential regularization
+<!-- ## Resolution through exponential regularization
 
 The same procedure for iteratively increasing $k$ is used.
 
 ```@example main
 regMethod = 2       # Exponential regularization
-ki = 20             # Value of k for the first iteration
+ki = 100             # Value of k for the first iteration
 N = 400
 maxki = 400          # Value of k for the last iteration
 while ki < maxki
-    global ki += 20  # Iteration step
+    global ki += 100  # Iteration step
     local print_level = (ki == maxki) # Only print the output on the last iteration
     global k = ki
     global sol = solve(ocp; grid_size=N, init=sol, print_level=4*print_level)
@@ -168,11 +168,11 @@ u(t)  = sol.control(t)
 xticks = ([0, θ₁, x₁ᶜ], ["0", "θ₁", "x₁ᶜ"])
 yticks = ([0, θ₂], ["0", "θ₂"])
 
-plot!(plt1, x₁.(tspan), x₂.(tspan), label="optimal trajectory", xlabel="x₁", ylabel="x₂", xlimits=(θ₁/1.25, 1.1*x₁ᶜ), ylimits=(θ₂/2, 1.5*θ₂))
+plot!(plt1, x₁.(tspan), x₂.(tspan), label="optimal trajectory", xlabel="x₁", ylabel="x₂", xlimits=(θ₁/1.5, 1.1*x₁ᶜ), ylimits=(θ₂/2, 1.75*θ₂))
 xticks!(xticks)
 yticks!(yticks)
 plot!(plt2, tspan, u, label="optimal control", xlabel="t")
 plot(plt1, plt2; layout=(1,2), size=(800,300))
 ```
 
-[^1]: E. Farcot, J.-L. Gouzé, Periodic solutions of piecewise affine gene network models with non uniform decay rates: the case of a negative feedback loop, Acta biotheoretica 57 (4) (2009) 429–455.
+[^1]: E. Farcot, J.-L. Gouzé, Periodic solutions of piecewise affine gene network models with non uniform decay rates: the case of a negative feedback loop, Acta biotheoretica 57 (4) (2009) 429–455. -->
