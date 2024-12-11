@@ -3,9 +3,5 @@ uuid = "3a975481-f65e-4f93-b353-981d00172cb9"
 authors = ["Agustín G. Yabo <agustin.yabo@inrae.fr>"]
 version = "0.1.0"
 
-[deps]
-Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-
 [compat]
-Documenter = "1.8.0"
 julia = "1.10"
