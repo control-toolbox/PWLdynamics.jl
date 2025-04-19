@@ -90,7 +90,7 @@ ocp = @def begin
 
     tf ∈ R,                variable
     t ∈ [ 0, tf ],         time
-    x = [ x₁, x₂ ] ∈ R²,   state
+    x = ( x₁, x₂ ) ∈ R²,   state
     u ∈ R,                 control 
 
     x(0) == x₀
@@ -133,11 +133,11 @@ Plotting of the results:
 plt1 = plot()
 plt2 = plot()
 
-tf    = sol.variable
+tf    = variable(sol)
 tspan = range(0, tf, N)   # time interval
-x₁(t) = sol.state(t)[1]
-x₂(t) = sol.state(t)[2]
-u(t)  = sol.control(t)
+x₁(t) = state(sol)(t)[1]
+x₂(t) = state(sol)(t)[2]
+u(t)  = control(sol)(t)
 
 xticks = ([0, θ₁], ["0", "θ₁"])
 yticks = ([0, θ₂, x₂ᶠ], ["0", "θ₂", "x₂ᶠ"])
@@ -174,11 +174,11 @@ Plotting of the results:
 plt1 = plot()
 plt2 = plot()
 
-tf    = sol.variable
+tf    = variable(sol)
 tspan = range(0, tf, N)   # time interval
-x₁(t) = sol.state(t)[1]
-x₂(t) = sol.state(t)[2]
-u(t)  = sol.control(t)
+x₁(t) = state(sol)(t)[1]
+x₂(t) = state(sol)(t)[2]
+u(t)  = control(sol)(t)
 
 xticks = ([0, θ₁], ["0", "θ₁"])
 yticks = ([0, θ₂, x₂ᶠ], ["0", "θ₂", "x₂ᶠ"])

@@ -62,13 +62,68 @@ y3 = (u .- 1).*(1 .- 2 ./ (1 .+ exp.(k .* (u .- 1))))
 plot(u, [y1, y2, y3], label=["|u-1|" "Hill" "Exponential"], xlabel="u")
 ```
 
-## Dependencies
+[^1]: Agustín G. Yabo, Nicolas Augier. On L¹ and time-optimal state transitions in piecewise linear models of gene-regulatory networks. Preprint. 2024. [https://hal.science/hal-04820387](https://hal.science/hal-04820387).
 
-All the numerical simulations to generate this documentation are performed with the following packages.
+## Reproducibility
 
-```@example
-using Pkg
-Pkg.status()
+```@raw html
+<details><summary>The documentation of this package was built using these direct dependencies,</summary>
 ```
 
-[^1]: Agustín G. Yabo, Nicolas Augier. On L¹ and time-optimal state transitions in piecewise linear models of gene-regulatory networks. Preprint. 2024. [https://hal.science/hal-04820387](https://hal.science/hal-04820387).
+```@example
+using Pkg # hide
+Pkg.status() # hide
+```
+
+```@raw html
+</details>
+```
+
+```@raw html
+<details><summary>and using this machine and Julia version.</summary>
+```
+
+```@example
+using InteractiveUtils # hide
+versioninfo() # hide
+```
+
+```@raw html
+</details>
+```
+
+```@raw html
+<details><summary>A more complete overview of all dependencies and their versions is also provided.</summary>
+```
+
+```@example
+using Pkg # hide
+Pkg.status(; mode = PKGMODE_MANIFEST) # hide
+```
+
+```@raw html
+</details>
+```
+
+```@eval
+using TOML
+using Markdown
+version = TOML.parse(read("../../Project.toml", String))["version"]
+name = TOML.parse(read("../../Project.toml", String))["name"]
+link_manifest = "https://github.com/SciML/" *
+                name *
+                ".jl/tree/gh-pages/v" *
+                version *
+                "/assets/Manifest.toml"
+link_project = "https://github.com/SciML/" *
+               name *
+               ".jl/tree/gh-pages/v" *
+               version *
+               "/assets/Project.toml"
+Markdown.parse("""You can also download the
+[manifest]($link_manifest)
+file and the
+[project]($link_project)
+file.
+""")
+```
