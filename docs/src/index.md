@@ -110,12 +110,12 @@ using TOML
 using Markdown
 version = TOML.parse(read("../../Project.toml", String))["version"]
 name = TOML.parse(read("../../Project.toml", String))["name"]
-link_manifest = "https://github.com/SciML/" *
+link_manifest = "https://github.com/agustinyabo/" *
                 name *
                 ".jl/tree/gh-pages/v" *
                 version *
                 "/assets/Manifest.toml"
-link_project = "https://github.com/SciML/" *
+link_project = "https://github.com/agustinyabo/" *
                name *
                ".jl/tree/gh-pages/v" *
                version *
