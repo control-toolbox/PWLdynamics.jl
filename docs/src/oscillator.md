@@ -1,3 +1,10 @@
+```@meta
+EditURL = "../src-literate/oscillator.jl"
+```
+
+[![](https://mybinder.org/badge_logo.svg)](<unknown>/notebooks/oscillator.ipynb)
+[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](<unknown>/notebooks/oscillator.ipynb)
+
 # Damped genetic oscillator
 
 The simplest GRN exhibiting oscillatory behaviors can be modeled through two variables $x_1$ and $x_2$ with opposite mutual effects: $x_1$ catalyzes the production of $x_2$, that in turn inhibits the production of $x_1$. We suppose that the system can be externally controlled by a chemical inducer that targets only one of the genes. The model is defined as
@@ -15,7 +22,7 @@ For any initial condition, the openloop system (i.e, $u \equiv 1$) converges to 
 
 The control objective is to induce a sustained oscillation. Thus, we can state the problem of producing a single cycle, which can be written through the initial and terminal constraints:
 ```math
-    x(0) = x(t_f) = (x_1^c, \theta_2 ) 
+    x(0) = x(t_f) = (x_1^c, \theta_2 )
 ```
 for free final time $t_f > 0$ and for $x_1^c > \theta_1$.
 
@@ -76,7 +83,7 @@ ocp = @def begin
     tf ∈ R,                variable
     t ∈ [ 0, tf ],         time
     x = ( x₁, x₂ ) ∈ R²,   state
-    u ∈ R,                 control 
+    u ∈ R,                 control
 
     x₁(0) == x₁ᶜ
     x₂(0) == θ₂
@@ -89,7 +96,7 @@ ocp = @def begin
     ẋ(t) == [ - γ₁*x₁(t) + k₁*u(t)*(1 - s⁺(x₂(t),θ₂,regMethod))  ,
               - γ₂*x₂(t) + k₂*s⁺(x₁(t),θ₁,regMethod) ]
 
-    ∫(λ*abs_m1(u(t),regMethod) + 1-λ) → min      
+    ∫(λ*abs_m1(u(t),regMethod) + 1-λ) → min
 
 end
 nothing # hide
@@ -176,3 +183,8 @@ plot(plt1, plt2; layout=(1,2), size=(800,300))
 ```
 
 [^1]: E. Farcot, J.-L. Gouzé, Periodic solutions of piecewise affine gene network models with non uniform decay rates: the case of a negative feedback loop, Acta biotheoretica 57 (4) (2009) 429–455. -->
+
+---
+
+*This page was generated using [Literate.jl](https://github.com/fredrikekre/Literate.jl).*
+

@@ -11,7 +11,9 @@ OUTPUT_MD = joinpath(@__DIR__, "src")
 OUTPUT_NB = joinpath(@__DIR__, "src/notebooks")
 OUTPUT_JL = joinpath(@__DIR__, "src/scripts")
 files = [
-    "index.jl"
+    "index.jl",
+    "bistable.jl",
+    "oscillator.jl",
 ]
 for file ∈ files
     INPUT = joinpath(@__DIR__, "src-literate", file)
