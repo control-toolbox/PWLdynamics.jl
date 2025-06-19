@@ -15,9 +15,13 @@ files = [
     "bistable.jl",
     "oscillator.jl",
 ]
+function jupyterlab(content)
+    content = replace(content, "gh-pages?filepath=" => "gh-pages?urlpath=%2Fdoc%2Ftree%2F") # change jupyter notebook to jupyter lab
+    return content
+end
 for file ∈ files
     INPUT = joinpath(@__DIR__, "src-literate", file)
-    Literate.markdown(INPUT, OUTPUT_MD)
+    Literate.markdown(INPUT, OUTPUT_MD; postprocess=jupyterlab)
     Literate.notebook(INPUT, OUTPUT_NB; execute=true)
     Literate.script(INPUT, OUTPUT_JL)
 end
@@ -37,6 +41,7 @@ files = [
 ]
 for file ∈ files 
     copy_file(file, "src-literate", "src")
+    copy_file(file, "src-literate", joinpath("src", "notebooks"))
 end
 
 # 

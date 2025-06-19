@@ -2,8 +2,8 @@
 EditURL = "../src-literate/bistable.jl"
 ```
 
-[![](https://mybinder.org/badge_logo.svg)](<unknown>/notebooks/bistable.ipynb)
-[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](<unknown>/notebooks/bistable.ipynb)
+[![](https://mybinder.org/badge_logo.svg)](tata/notebooks/bistable.ipynb)
+[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](tata/notebooks/bistable.ipynb)
 
 # Bistable toggle switch
 

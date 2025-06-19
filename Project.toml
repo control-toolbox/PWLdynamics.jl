@@ -1,7 +1,7 @@
 name = "PWLdynamics"
 uuid = "3a975481-f65e-4f93-b353-981d00172cb9"
 authors = ["Agustín G. Yabo <agustin.yabo@inrae.fr>"]
-version = "0.3.2"
+version = "0.3.3"
 
 [compat]
 julia = "1.10"

@@ -2,8 +2,8 @@
 EditURL = "../src-literate/oscillator.jl"
 ```
 
-[![](https://mybinder.org/badge_logo.svg)](<unknown>/notebooks/oscillator.ipynb)
-[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](<unknown>/notebooks/oscillator.ipynb)
+[![](https://mybinder.org/badge_logo.svg)](tata/notebooks/oscillator.ipynb)
+[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](tata/notebooks/oscillator.ipynb)
 
 # Damped genetic oscillator
 
