@@ -1,14 +1,3 @@
-```@meta
-EditURL = "../src-literate/index.jl"
-```
-
-```@meta
-Draft = false
-```
-
-[![](https://mybinder.org/badge_logo.svg)](<unknown>/notebooks/index.ipynb)
-[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](<unknown>/notebooks/index.ipynb)
-
 # PWL models of gene regulatory networks
 
 ## Context
@@ -51,7 +40,7 @@ Two regularization strategies are compared: through Hill functions, and through 
 
 A comparison for low values of $k$, for $s^+(x, \theta)$:
 
-````@example index
+```@example main
 using Plots
 θ = 2
 k = 10
@@ -60,11 +49,10 @@ y1 = (x .> θ)
 y2 = x.^k ./ (x.^k .+ θ^k)
 y3 = 1 .- 1 ./ (1 .+ exp.(k*(x.-θ)))
 plot(x, [y1, y2, y3], label=["s⁺" "Hill" "Exponential"], xlabel="x")
-````
-
+```
 and for $|u-1|$:
 
-````@example index
+```@example main
 using Plots
 k = 5
 u = range(0, 2, length=100)
@@ -72,7 +60,7 @@ y1 = abs.(u .- 1)
 y2 = (u .- 1).*(u.^k .- 1)./(u.^k .+ 1)
 y3 = (u .- 1).*(1 .- 2 ./ (1 .+ exp.(k .* (u .- 1))))
 plot(u, [y1, y2, y3], label=["|u-1|" "Hill" "Exponential"], xlabel="u")
-````
+```
 
 [^1]: Agustín G. Yabo, Nicolas Augier. On L¹ and time-optimal state transitions in piecewise linear models of gene-regulatory networks. Preprint. 2024. [https://hal.science/hal-04820387](https://hal.science/hal-04820387).
 
@@ -139,8 +127,3 @@ file and the
 file.
 """)
 ```
-
----
-
-*This page was generated using [Literate.jl](https://github.com/fredrikekre/Literate.jl).*
-

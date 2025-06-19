@@ -1,12 +1,34 @@
 using Documenter
 
+# For reproducibility
 mkpath("./docs/src/assets")
 cp("./docs/Manifest.toml", "./docs/src/assets/Manifest.toml", force = true)
 cp("./docs/Project.toml", "./docs/src/assets/Project.toml", force = true)
 
+# for binder
+using Literate
+OUTPUT_MD = joinpath(@__DIR__, "src")
+OUTPUT_NB = joinpath(@__DIR__, "src/notebooks")
+OUTPUT_JL = joinpath(@__DIR__, "src/scripts")
+files = [
+    "index.jl"
+]
+for file ∈ files
+    INPUT = joinpath(@__DIR__, "src-literate", file)
+    Literate.markdown(INPUT, OUTPUT_MD)
+    Literate.notebook(INPUT, OUTPUT_NB)
+    Literate.script(INPUT, OUTPUT_JL)
+end
+
+# 
 repo_url = "github.com/agustinyabo/PWLdynamics.jl"
 
 makedocs(;
+    draft=true, # if draft is true, then the julia code from .md is not executed
+    # to disable the draft mode in a specific markdown file, use the following:
+    # ```@meta
+    # Draft = false
+    # ```
     remotes=nothing,
     warnonly=:cross_references,
     sitename="PWLdynamics",
