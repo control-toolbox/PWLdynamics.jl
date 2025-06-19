@@ -5,7 +5,7 @@ mkpath(joinpath(@__DIR__, "src", "assets"))
 cp(joinpath(@__DIR__, "Manifest.toml"), joinpath(@__DIR__, "src", "assets", "Manifest.toml"), force = true)
 cp(joinpath(@__DIR__, "Project.toml"), joinpath(@__DIR__, "src", "assets", "Project.toml"), force = true)
 
-# for binder
+# For binder
 using Literate
 OUTPUT_MD = joinpath(@__DIR__, "src")
 OUTPUT_NB = joinpath(@__DIR__, "src", "notebooks")
@@ -15,18 +15,18 @@ files = [
     "bistable.jl",
     "oscillator.jl",
 ]
-function jupyterlab(content)
+function markdown_postprocess(content)
     content = replace(content, "gh-pages?filepath=" => "gh-pages?urlpath=%2Fdoc%2Ftree%2F") # change jupyter notebook to jupyter lab
     return content
 end
 for file ∈ files
     INPUT = joinpath(@__DIR__, "src-literate", file)
-    Literate.markdown(INPUT, OUTPUT_MD; postprocess=jupyterlab)
+    Literate.markdown(INPUT, OUTPUT_MD; postprocess=markdown_postprocess)
     Literate.notebook(INPUT, OUTPUT_NB; execute=true)
     Literate.script(INPUT, OUTPUT_JL)
 end
 
-# files to copy
+# Files to copy
 function copy_file(file, dir_source, dir_destination)
     cp(
         joinpath(@__DIR__, dir_source, file), 

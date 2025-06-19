@@ -2,8 +2,8 @@
 EditURL = "../src-literate/index.jl"
 ```
 
-[![](https://mybinder.org/badge_logo.svg)](tata/notebooks/index.ipynb)
-[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](tata/notebooks/index.ipynb)
+[![](https://mybinder.org/badge_logo.svg)](<unknown>/notebooks/index.ipynb)
+[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](<unknown>/notebooks/index.ipynb)
 
 # PWL models of gene regulatory networks
 

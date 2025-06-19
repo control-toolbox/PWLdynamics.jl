@@ -13,10 +13,10 @@
 # where a detail of each term can be found in [Introduction](index.md#context). The domain $K=[0,k_1 / \gamma_1]\times [0,k_2 / \gamma_2]$ is forward invariant by the dynamics, which divides the state space into four regions:
 # ```math
 # \begin{array}{l}
-# B_{00}=\left\{(x_1,x_2)\in \R^2 \mid 0<x_1<\theta_1, \ 0<x_2<\theta_2\right\},\\
-# B_{01}=\left\{(x_1,x_2)\in \R^2 \mid 0<x_1<\theta_1, \ \theta_2<x_2<\frac{k_2}{\gamma_2}\right\},\\
-# B_{10}=\left\{(x_1,x_2)\in \R^2 \mid \theta_1<x_1<\frac{k_1}{\gamma_1}, \ 0<x_2<\theta_2\right\},\\
-# B_{11}=\left\{(x_1,x_2)\in \R^2 \mid \theta_1<x_1<\frac{k_1}{\gamma_1}, \ \theta_2<x_2<\frac{k_2}{\gamma_2}\right\},
+# B_{00}=\left\{(x_1,x_2)\in \mathbb{R}^2 \mid 0<x_1<\theta_1, \ 0<x_2<\theta_2\right\},\\
+# B_{01}=\left\{(x_1,x_2)\in \mathbb{R}^2 \mid 0<x_1<\theta_1, \ \theta_2<x_2<\frac{k_2}{\gamma_2}\right\},\\
+# B_{10}=\left\{(x_1,x_2)\in \mathbb{R}^2 \mid \theta_1<x_1<\frac{k_1}{\gamma_1}, \ 0<x_2<\theta_2\right\},\\
+# B_{11}=\left\{(x_1,x_2)\in \mathbb{R}^2 \mid \theta_1<x_1<\frac{k_1}{\gamma_1}, \ \theta_2<x_2<\frac{k_2}{\gamma_2}\right\},
 # \end{array}
 # ```
 # and two locally asymptotically stable steady states
