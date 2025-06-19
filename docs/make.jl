@@ -35,6 +35,7 @@ makedocs(;
     format=Documenter.HTML(;
         repolink="https://" * repo_url,
         prettyurls=false,
+        push_preview=true,
         size_threshold_ignore=[
             "index.md", 
             "bistable.md", 
