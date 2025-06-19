@@ -2,7 +2,7 @@
 
 julia_version = "1.11.5"
 manifest_format = "2.0"
-project_hash = "7911c4ce20a00f16a7eedfec8d18581eb31efc56"
+project_hash = "b06776ad60486819282b87704b4c6fbbe09acc13"
 
 [[deps.ADNLPModels]]
 deps = ["ADTypes", "ForwardDiff", "LinearAlgebra", "NLPModels", "Requires", "ReverseDiff", "SparseArrays", "SparseConnectivityTracer", "SparseMatrixColorings"]
@@ -734,6 +734,12 @@ version = "2.10.0"
     LDLFactorizations = "40e66cde-538c-5869-a4ad-c39174c6795b"
     Metal = "dde4c033-4e86-420c-a63e-0dd931031962"
 
+[[deps.Literate]]
+deps = ["Base64", "IOCapture", "JSON", "REPL"]
+git-tree-sha1 = "da046be6d63304f7ba9c1bb04820fb306ba1ab12"
+uuid = "98b081ad-f1c9-55d3-8b20-4c87d4299306"
+version = "2.20.1"
+
 [[deps.LogExpFunctions]]
 deps = ["DocStringExtensions", "IrrationalConstants", "LinearAlgebra"]
 git-tree-sha1 = "13ca9e2586b89836fd20cccf56e57e2b9ae7f38f"
@@ -943,7 +949,7 @@ version = "10.42.0+1"
 [[deps.PWLdynamics]]
 path = "/Users/ocots/Research/logiciels/dev/control-toolbox/PWLdynamics.jl"
 uuid = "3a975481-f65e-4f93-b353-981d00172cb9"
-version = "0.2.1"
+version = "0.3.0"
 
 [[deps.Pango_jll]]
 deps = ["Artifacts", "Cairo_jll", "Fontconfig_jll", "FreeType2_jll", "FriBidi_jll", "Glib_jll", "HarfBuzz_jll", "JLLWrappers", "Libdl"]

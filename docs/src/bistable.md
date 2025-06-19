@@ -1,3 +1,10 @@
+```@meta
+EditURL = "../src-literate/bistable.jl"
+```
+
+[![](https://mybinder.org/badge_logo.svg)](<unknown>/notebooks/bistable.ipynb)
+[![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](<unknown>/notebooks/bistable.ipynb)
+
 # Bistable toggle switch
 
 The simplest GRN exhibiting bistability can be modeled through two variables $x_1$ and $x_2$ that mutually repress each othe. We suppose that the system can be externally controlled by a chemical inducer that targets the synthesis rates of both genes. The model is defined as
@@ -29,7 +36,7 @@ as shown in the following figure:
 
 The control objective is to induce a transition between an initial point in $B_{10}$ and a final value of $x_2$ in $B_{01}$, which can be written through the initial and terminal constraints:
 ```math
-    x(0) = x_0 \in B_{10}, \qquad x_1(t_f) < \theta_1, \qquad x_2(t_f) = x_2^f 
+    x(0) = x_0 \in B_{10}, \qquad x_1(t_f) < \theta_1, \qquad x_2(t_f) = x_2^f
 ```
 for free final time $t_f > 0$ and for $x_2^f > \theta_2$.
 
@@ -91,7 +98,7 @@ ocp = @def begin
     tf ∈ R,                variable
     t ∈ [ 0, tf ],         time
     x = ( x₁, x₂ ) ∈ R²,   state
-    u ∈ R,                 control 
+    u ∈ R,                 control
 
     x(0) == x₀
     x₁(tf) ≤ θ₁
@@ -103,7 +110,7 @@ ocp = @def begin
     ẋ(t) == [ - γ₁*x₁(t) + k₁*u(t)*(1 - s⁺(x₂(t),θ₂,regMethod))  ,
               - γ₂*x₂(t) + k₂*u(t)*(1 - s⁺(x₁(t),θ₁,regMethod)) ]
 
-    ∫(λ*abs_m1(u(t),regMethod) + 1-λ) → min      
+    ∫(λ*abs_m1(u(t),regMethod) + 1-λ) → min
 
 end
 nothing # hide
@@ -190,3 +197,8 @@ yticks!(yticks)
 plot!(plt2, tspan, u, label="optimal control", xlabel="t")
 plot(plt1, plt2; layout=(1,2), size=(800,300))
 ```
+
+---
+
+*This page was generated using [Literate.jl](https://github.com/fredrikekre/Literate.jl).*
+

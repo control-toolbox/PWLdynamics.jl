@@ -2,10 +2,6 @@
 EditURL = "../src-literate/index.jl"
 ```
 
-```@meta
-Draft = false
-```
-
 [![](https://mybinder.org/badge_logo.svg)](<unknown>/notebooks/index.ipynb)
 [![](https://img.shields.io/badge/show-nbviewer-579ACA.svg)](<unknown>/notebooks/index.ipynb)
 
