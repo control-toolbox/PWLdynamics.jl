@@ -29,7 +29,6 @@ makedocs(;
     # ```@meta
     # Draft = false
     # ```
-    push_preview=true,
     remotes=nothing,
     warnonly=:cross_references,
     sitename="PWLdynamics",
@@ -53,4 +52,7 @@ makedocs(;
     ],
 )
 
-deploydocs(; repo=repo_url * ".git", devbranch="main")
+deploydocs(; 
+    push_preview=true,
+    repo=repo_url * ".git", 
+    devbranch="main")
