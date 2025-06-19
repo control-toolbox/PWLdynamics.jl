@@ -29,13 +29,13 @@ makedocs(;
     # ```@meta
     # Draft = false
     # ```
+    push_preview=true,
     remotes=nothing,
     warnonly=:cross_references,
     sitename="PWLdynamics",
     format=Documenter.HTML(;
         repolink="https://" * repo_url,
         prettyurls=false,
-        push_preview=true,
         size_threshold_ignore=[
             "index.md", 
             "bistable.md", 
