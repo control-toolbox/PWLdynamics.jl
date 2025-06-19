@@ -26,7 +26,7 @@ end
 repo_url = "github.com/agustinyabo/PWLdynamics.jl"
 
 makedocs(;
-    draft=true, # if draft is true, then the julia code from .md is not executed
+    draft=false, # if draft is true, then the julia code from .md is not executed
     # to disable the draft mode in a specific markdown file, use the following:
     # ```@meta
     # Draft = false
