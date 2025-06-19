@@ -28,17 +28,17 @@ for free final time $t_f > 0$ and for $x_1^c > \theta_1$.
 
 ## Problem definition
 
-```@example main
+````@example oscillator
 using Plots
 using Plots.PlotMeasures
 using OptimalControl
 using NLPModelsIpopt
 nothing # hide
-```
+````
 
 We define the regularization functions, where the method is decided through the argument `regMethod`.
 
-```@example main
+````@example oscillator
 # Regularization of the PWL dynamics
 function s⁺(x, θ, regMethod)
     if regMethod == 1 # Hill
@@ -59,11 +59,11 @@ function abs_m1(u, regMethod)
     return out*(u - 1)
 end
 nothing # hide
-```
+````
 
 Definition of the OCP:
 
-```@example main
+````@example oscillator
 # Constant definition
 k₁    = 2;    k₂    = 3     # Production rates
 γ₁    = 0.2;  γ₂    = 0.3   # Degradation rates
@@ -100,13 +100,13 @@ ocp = @def begin
 
 end
 nothing # hide
-```
+````
 
 ## Resolution through Hill regularization
 
 In order to ensure convergence of the solver, we solve the OCP by iteratively increasing the parameter $k$ while using the $i-1$-th solution as the initialization of the $i$-th iteration.
 
-```@example main
+````@example oscillator
 regMethod = 1       # Hill regularization
 ki = 10             # Value of k for the first iteration
 N = 400
@@ -118,11 +118,11 @@ while ki < maxki
     global sol = solve(ocp; grid_size=N, init=sol, print_level=4*print_level)
 end
 nothing # hide
-```
+````
 
 Plotting of the results:
 
-```@example main
+````@example oscillator
 plt1 = plot()
 plt2 = plot()
 
@@ -140,13 +140,13 @@ xticks!(xticks)
 yticks!(yticks)
 plot!(plt2, tspan, u, label="optimal control", xlabel="t")
 plot(plt1, plt2; layout=(1,2), size=(800,300))
-```
+````
 
-<!-- ## Resolution through exponential regularization
+## Resolution through exponential regularization
 
 The same procedure for iteratively increasing $k$ is used.
 
-```@example main
+````@example oscillator
 regMethod = 2       # Exponential regularization
 ki = 100             # Value of k for the first iteration
 N = 400
@@ -158,11 +158,11 @@ while ki < maxki
     global sol = solve(ocp; grid_size=N, init=sol, print_level=4*print_level)
 end
 nothing # hide
-```
+````
 
 Plotting of the results:
 
-```@example main
+````@example oscillator
 plt1 = plot()
 plt2 = plot()
 
@@ -180,7 +180,7 @@ xticks!(xticks)
 yticks!(yticks)
 plot!(plt2, tspan, u, label="optimal control", xlabel="t")
 plot(plt1, plt2; layout=(1,2), size=(800,300))
-```
+````
 
 [^1]: E. Farcot, J.-L. Gouzé, Periodic solutions of piecewise affine gene network models with non uniform decay rates: the case of a negative feedback loop, Acta biotheoretica 57 (4) (2009) 429–455. -->
 

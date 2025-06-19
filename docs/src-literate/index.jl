@@ -43,6 +43,7 @@
 
 # A comparison for low values of $k$, for $s^+(x, \theta)$:
 
+
 using Plots
 θ = 2
 k = 10

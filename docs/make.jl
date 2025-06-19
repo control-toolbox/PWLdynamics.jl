@@ -1,15 +1,15 @@
 using Documenter
 
 # For reproducibility
-mkpath("./docs/src/assets")
-cp("./docs/Manifest.toml", "./docs/src/assets/Manifest.toml", force = true)
-cp("./docs/Project.toml", "./docs/src/assets/Project.toml", force = true)
+mkpath(joinpath(@__DIR__, "src", "assets"))
+cp(joinpath(@__DIR__, "Manifest.toml"), joinpath(@__DIR__, "src", "assets", "Manifest.toml"), force = true)
+cp(joinpath(@__DIR__, "Project.toml"), joinpath(@__DIR__, "src", "assets", "Project.toml"), force = true)
 
 # for binder
 using Literate
 OUTPUT_MD = joinpath(@__DIR__, "src")
-OUTPUT_NB = joinpath(@__DIR__, "src/notebooks")
-OUTPUT_JL = joinpath(@__DIR__, "src/scripts")
+OUTPUT_NB = joinpath(@__DIR__, "src", "notebooks")
+OUTPUT_JL = joinpath(@__DIR__, "src", "scripts")
 files = [
     "index.jl",
     "bistable.jl",
@@ -18,12 +18,29 @@ files = [
 for file ∈ files
     INPUT = joinpath(@__DIR__, "src-literate", file)
     Literate.markdown(INPUT, OUTPUT_MD)
-    Literate.notebook(INPUT, OUTPUT_NB)
+    Literate.notebook(INPUT, OUTPUT_NB; execute=true)
     Literate.script(INPUT, OUTPUT_JL)
 end
 
+# files to copy
+function copy_file(file, dir_source, dir_destination)
+    cp(
+        joinpath(@__DIR__, dir_source, file), 
+        joinpath(@__DIR__, dir_destination, file);
+        force=true
+    )
+    return nothing
+end
+files = [
+    "bistable.png",
+    "openloop.png",
+]
+for file ∈ files 
+    copy_file(file, "src-literate", "src")
+end
+
 # 
-repo_url = "github.com/agustinyabo/PWLdynamics.jl"
+repo_url = joinpath("github.com", "agustinyabo", "PWLdynamics.jl")
 
 makedocs(;
     draft=false, # if draft is true, then the julia code from .md is not executed
