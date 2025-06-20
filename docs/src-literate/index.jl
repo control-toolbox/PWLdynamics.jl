@@ -43,7 +43,6 @@
 
 # A comparison for low values of $k$, for $s^+(x, \theta)$:
 
-
 using Plots
 θ = 2
 k = 10
@@ -55,7 +54,6 @@ plot(x, [y1, y2, y3], label=["s⁺" "Hill" "Exponential"], xlabel="x")
 
 # and for $|u-1|$:
 
-using Plots
 k = 5
 u = range(0, 2, length=100)
 y1 = abs.(u .- 1)
