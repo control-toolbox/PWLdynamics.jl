@@ -1,19 +1,11 @@
-# [.github/workflows/coverage.yml]
-name: coverage
+name: Coverage
 on:
   push:
     branches:
       - main
     tags: '*'
 jobs:
-  test:
-    name: coverage
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: julia-actions/setup-julia@latest
-      - uses: julia-actions/julia-runtest@latest
-      - uses: julia-actions/julia-processcoverage@latest
-      - uses: codecov/codecov-action@v5
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  call:
+    uses: control-toolbox/CTActions/.github/workflows/coverage.yml@main
+    secrets:
+      codecov-secret: ${{ secrets.CODECOV_TOKEN }}
