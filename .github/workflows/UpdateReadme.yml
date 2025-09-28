@@ -32,8 +32,8 @@ jobs:
     with:
       template_file: README.template.md
       output_file: README.md
-      package_name: PWLdynamics        # package for INSTALL.md
-      repo_name: PWLdynamics.jl        # repository for CONTRIBUTING.md links
-      citation_badge: "[![DOI](https://zenodo.org/badge/541187171.svg)](https://zenodo.org/doi/10.5281/zenodo.16753152)" # example, can be empty
+      package_name: PWLdynamics              # package for INSTALL.md
+      repo_name: agustinyabo/PWLdynamics.jl  # repository for CONTRIBUTING.md links
+      doc_url: https://agustinyabo.github.io/PWLdynamics.jl
       assignee: "ocots"
     secrets: inherit
