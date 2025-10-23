@@ -7,7 +7,7 @@ EditURL = "../src-literate/bistable.jl"
 
 # Bistable toggle switch
 
-The simplest GRN exhibiting bistability can be modeled through two variables $x_1$ and $x_2$ that mutually repress each othe. We suppose that the system can be externally controlled by a chemical inducer that targets the synthesis rates of both genes. The model is defined as
+The simplest GRN exhibiting bistability can be modeled through two variables $x_1$ and $x_2$ that mutually repress each other. We suppose that the system can be externally controlled by a chemical inducer that targets the synthesis rates of both genes. The model is defined as
 ```math
 \left\{ \begin{array}{l}
 \dot{x}_1 = -\gamma_1 x_1 + u(t) k_1 s^{-}(x_2,\theta_2) , \\
