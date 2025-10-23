@@ -65,64 +65,59 @@ plot(u, [y1, y2, y3]; label=["|u-1|" "Hill" "Exponential"], xlabel="u")
 
 #md # ## Reproducibility
 
+#md # ```@setup main
+#md # using Pkg
+#md # using InteractiveUtils
+#md # using Markdown
+#md 
+#md # # Download links for the benchmark environment
+#md # function _downloads_toml(DIR)
+#md #     link_manifest = joinpath("assets", DIR, "Manifest.toml")
+#md #     link_project = joinpath("assets", DIR, "Project.toml")
+#md #     return Markdown.parse("""
+#md #     You can download the exact environment used to build this documentation:
+#md #     - 📦 [Project.toml]($link_project) - Package dependencies
+#md #     - 📋 [Manifest.toml]($link_manifest) - Complete dependency tree with versions
+#md #     """)
+#md # end
+#md # ```
+#md 
+#md # ```@example main
+#md # _downloads_toml(".") # hide
+#md # ```
+#md 
 #md # ```@raw html
-#md # <details><summary>The documentation of this package was built using these direct dependencies,</summary>
+#md # <details style="margin-bottom: 0.5em; margin-top: 1em;"><summary>ℹ️ Version info</summary>
 #md # ```
-
-#md # ```@example
-#md # using Pkg # hide
-#md # Pkg.status() # hide
-#md # ```
-
-#md # ```@raw html
-#md # </details>
-#md # ```
-
-#md # ```@raw html
-#md # <details><summary>and using this machine and Julia version.</summary>
-#md # ```
-
-#md # ```@example
-#md # using InteractiveUtils # hide
+#md 
+#md # ```@example main
 #md # versioninfo() # hide
 #md # ```
-
+#md 
 #md # ```@raw html
 #md # </details>
 #md # ```
-
+#md 
 #md # ```@raw html
-#md # <details><summary>A more complete overview of all dependencies and their versions is also provided.</summary>
+#md # <details style="margin-bottom: 0.5em;"><summary>📦 Package status</summary>
 #md # ```
-
-#md # ```@example
-#md # using Pkg # hide
+#md 
+#md # ```@example main
+#md # Pkg.status() # hide
+#md # ```
+#md 
+#md # ```@raw html
+#md # </details>
+#md # ```
+#md 
+#md # ```@raw html
+#md # <details style="margin-bottom: 0.5em;"><summary>📚 Complete manifest</summary>
+#md # ```
+#md 
+#md # ```@example main
 #md # Pkg.status(; mode = PKGMODE_MANIFEST) # hide
 #md # ```
-
+#md 
 #md # ```@raw html
 #md # </details>
-#md # ```
-
-#md # ```@eval
-#md # using TOML
-#md # using Markdown
-#md # version = TOML.parse(read("../../Project.toml", String))["version"]
-#md # name = TOML.parse(read("../../Project.toml", String))["name"]
-#md # link_manifest = "https://github.com/agustinyabo/" *
-#md #                 name *
-#md #                 ".jl/tree/gh-pages/v" *
-#md #                 version *
-#md #                 "/assets/Manifest.toml"
-#md # link_project = "https://github.com/agustinyabo/" *
-#md #                name *
-#md #                ".jl/tree/gh-pages/v" *
-#md #                version *
-#md #                "/assets/Project.toml"
-#md # Markdown.parse("""You can also download the
-#md # [manifest]($link_manifest)
-#md # file and the
-#md # [project]($link_project)
-#md # file.
-#md # """)
 #md # ```
