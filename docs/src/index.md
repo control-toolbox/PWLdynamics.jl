@@ -69,7 +69,7 @@ y3 = (u .- 1) .* (1 .- 2 ./ (1 .+ exp.(k .* (u .- 1))))
 plot(u, [y1, y2, y3]; label=["|u-1|" "Hill" "Exponential"], xlabel="u")
 ````
 
-[^1]: Agustín G. Yabo, Nicolas Augier. On L¹ and time-optimal state transitions in piecewise linear models of gene-regulatory networks. Preprint. 2024. [https://hal.science/hal-04820387](https://hal.science/hal-04820387).
+[^1]: Agustín G. Yabo, Nicolas Augier. On L¹ and time-optimal state transitions in piecewise linear models of gene-regulatory networks. Nonlinear Analysis: Hybrid Systems, 2026, 59, pp.101650. [https://dx.doi.org/10.1016/j.nahs.2025.101650](10.1016/j.nahs.2025.101650). [https://hal.science/hal-04820387](https://hal.science/hal-04820387).
 
 ## Reproducibility
 
