@@ -9,7 +9,7 @@ The PWLdynamics.jl repo is part of the [control-toolbox ecosystem](https://githu
 
 | **Category** | **Badge** |
 |-----------------------|-----------|
-| **Documentation** | [![Stable Docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://agustinyabo.github.io/PWLdynamics.jl/stable/) [![Dev Docs](https://img.shields.io/badge/docs-dev-8A2BE2.svg)](https://agustinyabo.github.io/PWLdynamics.jl/dev/) |
+| **Documentation** | [![Stable Docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://agustinyabo.github.io/PWLdynamics.jl/stable/) [![Dev Docs](https://img.shields.io/badge/docs-dev-8A2BE2.svg)](https://agustinyabo.github.io/PWLdynamics.jl/dev/) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/agustinyabo/PWLdynamics.jl) |
 | **CI / Build** | [![Build Status](https://github.com/agustinyabo/PWLdynamics.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/agustinyabo/PWLdynamics.jl/actions/workflows/CI.yml?query=branch%3Amain) |
 | **Release / Version** | [![Release](https://img.shields.io/github/v/release/agustinyabo/PWLdynamics.jl.svg)](https://github.com/agustinyabo/PWLdynamics.jl/releases) |
 | **License** | [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/agustinyabo/PWLdynamics.jl/blob/master/LICENSE) |
